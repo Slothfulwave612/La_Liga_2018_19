@@ -1,0 +1,64 @@
+1. Data Cleaning:
+    i. pick the fields upto AR(Away Team Red Cards), not including the betting fields.
+   ii. change the Date field data-type from str to timestamp object.
+  iii. drop the Div field as it contains only one value SP1 denoting Spanish Premier 1.
+   iv. check for NaN values; no values found.
+    v. half_to_full_time_home_goals(HFHG) = FTHG - HTHG
+   vi. half_to_full_time_away_goals(HFAG) = FTAG - HTAG
+
+2. Form league table:
+    -> based on the dataset we have, we will create the league table for 2018-19 season.
+    -> the league table will be a dataframe which will include the following fields:
+        i. Club
+       ii. MP - Matches Played
+      iii. W - Wins
+       iv. D - Draws
+        v. L - Lose
+       vi. GF - Goals For
+      vii. GA - Goals Against
+     viii. GD - Goal Difference
+       ix. Pts - Points
+
+3. Exploratory Data Analysis:
+    2.1. Key to result data:
+        i. total goals scored throughout the season; using FTHG and FTAG.
+       ii. top five teams with most number of goals; using FTHG and FTAH.
+      iii. top five teams with least number of goals; using FTAG and FTAH.
+       iv. top five teams with the most clean sheets; using FTHG and FTAG.
+        --> merge ii and iii together.
+        v. average goals scored by each team at half time; using HTHG.
+       vi. average goals scored by each team at full time; using HFHG.
+        --> merge iv and v together.
+      vii. average goals conceded by each team at half time; using HTAG.
+     viii. total, average and minimum goal conceded by each team; using HFAG.
+        --->
+       ix. win percent, lose percent and draw percent for each and every team at half time; using HTR.
+        x. win percent, lose percent and draw percent for each and every team at full time; using FTR.
+      --->
+       xi. home wins, away wins: top five; using FTR.
+      xii. home wins streak, away wins streak - draw out top five and bottom five; using FTR.
+
+    2.2. Match Statistics:
+        ---> merge i and ii
+        i. home team shots v/s number of goals; using HS and FTHG.
+       ii. away team shots v/s number of goals; using AS and FTAG.
+        ---> merge iii and iv
+      iii. home team shots on target v/s number of goals; using HST and FTHG.
+       iv. away team shots on target v/s number of goals; using AST and FTAG.
+        --->
+        v. top five teams with average most number of shots and top five teams with average least number of shots; using HST and AST.
+       vi. top five teams with average most number of shots on target and top five teams with average least number of shots on target; using HST and AST.
+       --->
+      vii. top five teams to hit the woodwork most number of times; using HHW and AHW.
+       --->
+     viii. top five teams with most number of corners and top five teams with the least number of corners; using HC and AC.
+       --->
+       ix. top five teams with most/least number of yellow cards; using HR and AR.
+        x. top five teams with most/least number of red cards; using HR and AR.
+       xi. ranking the teams as per discipline; fouls=1, yellow cards = 3 and red cards = 5 points; will also tell us which team was more physical throughout the season; using HF, AF, HR and AR.
+       xii. average home team fouls v/s away team fouls; using HR and AR.
+      xiii. top five teams with most red and yellow cards and top five teams with least red and yellow cards; using HY, AY, HR and AR.
+       --->
+       ix. top five teams conceding most number of free kicks and top five teams conceding least number of free kicks.
+       --->
+       x. top five teams against which the opponents were called offside(count); offside trap masters; using HO and AO.
