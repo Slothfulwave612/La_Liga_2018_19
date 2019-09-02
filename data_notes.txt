@@ -1,13 +1,13 @@
 1. Data Cleaning:
-    i. pick the fields upto AR(Away Team Red Cards), not including the betting fields.
-   ii. change the Date field data-type from str to timestamp object.
-  iii. drop the Div field as it contains only one value SP1 denoting Spanish Premier 1.
-   iv. check for NaN values; no values found.
-    v. half_to_full_time_home_goals(HFHG) = FTHG - HTHG
-   vi. half_to_full_time_away_goals(HFAG) = FTAG - HTAG
+    i. pick the fields upto AR(Away Team Red Cards), not including the betting fields.  |
+   ii. change the Date field data-type from str to timestamp object.   |
+  iii. drop the Div field as it contains only one value SP1 denoting Spanish Premier 1.   |
+   iv. check for NaN values; no values found.  |
+    v. second_half_home_goals(SHHG) = FTHG - HTHG  |
+   vi. second_half_away_goals(SHAG) = FTAG - HTAG  |
 
 2. Form league table:
-    -> based on the dataset we have, we will create the league table for 2018-19 season.
+    -> based on the dataset we have, we will create the league table for 2018-19 season.   |
     -> the league table will be a dataframe which will include the following fields:
         i. Club
        ii. MP - Matches Played
@@ -17,13 +17,15 @@
        vi. GF - Goals For
       vii. GA - Goals Against
      viii. GD - Goal Difference
-       ix. Pts - Points
+       ix. Pts - Points                          |
 
 3. Exploratory Data Analysis:
     2.1. Key to result data:
-        i. total goals scored throughout the season; using FTHG and FTAG.
+        i. total goals scored throughout the season; using FTHG and FTAG.   |
        ii. top five teams with most number of goals; using FTHG and FTAH.
       iii. top five teams with least number of goals; using FTAG and FTAH.
+      most conceded    |
+      least conceded   |
        iv. top five teams with the most clean sheets; using FTHG and FTAG.
         --> merge ii and iii together.
         v. average goals scored by each team at half time; using HTHG.
